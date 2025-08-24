@@ -1,0 +1,16 @@
+District,Province,Total_Secondary_Enrollment,Female_Secondary_Enrollment,Female_STEM_Enrollment_Pct
+Kathmandu,Province 3,125000,62500,45.2
+Lalitpur,Province 3,85000,45000,42.1
+Bhaktapur,Province 3,42000,21000,38.5
+Kaski,Province 4,78000,36000,28.3
+Rupandehi,Province 5,92000,41000,15.8
+Banke,Province 5,68000,29000,12.4
+Dang,Province 5,71000,32000,18.9
+Nawalparasi,Province 4,65000,28000,14.7
+Sunsari,Province 1,88000,40000,22.5
+Morang,Province 1,95000,42000,24.8
+Jhapa,Province 1,87000,41000,26.3
+Kailali,Province 7,82000,35000,16.7
+Kanchanpur,Province 7,68000,31000,17.2
+Dadeldhura,Province 7,28000,11500,8.9
+Dolpa,Province 6,12500,4800,5.2

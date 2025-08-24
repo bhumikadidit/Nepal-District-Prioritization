@@ -1,0 +1,16 @@
+District,Youth_Unemployment_Rate,Female_Unemployment_Rate,Digital_Job_Growth_Pct
+Kathmandu,11.5,13.2,8.7
+Lalitpur,12.8,14.5,7.9
+Bhaktapur,10.2,11.8,6.4
+Kaski,18.3,22.7,5.2
+Rupandehi,25.4,29.8,3.8
+Banke,28.7,33.2,2.9
+Dang,22.5,26.4,3.5
+Nawalparasi,24.8,28.9,3.1
+Sunsari,20.4,24.1,4.2
+Morang,19.8,23.5,4.5
+Jhapa,18.9,22.3,4.8
+Kailali,26.3,30.5,2.7
+Kanchanpur,25.1,29.2,2.8
+Dadeldhura,31.5,36.8,1.2
+Dolpa,35.2,41.5,0.8
