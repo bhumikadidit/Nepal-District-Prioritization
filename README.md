@@ -1,70 +1,35 @@
-Nepal Education Analysis for UNESCO
-What This Project Is About
-I created a data analysis project to help UNESCO decide where to invest in girls' STEM education across Nepal. The project identifies which districts need the most help and shows how education investments can create jobs and opportunities for young people.
+Nepal Education + Jobs Prioritization (UNESCO-style)
 
+## What this project does
+This project builds a simple district "priority score" to help decide where investment in girls' STEM education could be most urgent (based on education gaps + unemployment need + local digital job opportunity signals).
 
-What I Created
-A Complete Dataset - Combined education, employment, and job market information for all Nepal districts
+## Repository workflow (how files connect)
+- `data/raw/` contains the three input datasets (education, unemployment, digital jobs).
+- `notebooks/EOF.ipynb` merges the datasets, calculates `EOF_Priority_Score`, creates a few plots, then exports `data/processed/final_data.csv` for Power BI.
+- `dashboard/EOF_Nepal_Dashboard.pbix` is the Power BI report built from `data/processed/final_data.csv`.
+- `src/jobsscraping.ipynb` generates the example `data/raw/nepal_digital_jobs.csv` file (currently a curated example dataset; the scraping section is just a demo).
 
-A Priority Scoring System - Developed a special formula to rank districts by how much they need help
+## How the priority score works (in plain language)
+In `notebooks/EOF.ipynb`, the score is a weighted combination of normalized (0-1) metrics:
+- Lower `Female_STEM_Enrollment_Pct` => higher priority (this metric is inverted after scaling).
+- Higher `Youth_Unemployment_Rate` => higher priority.
+- Higher `Digital_Job_Postings` and `Digital_Jobs_Per_1000` => higher priority (more opportunity if skills improve).
 
-Predictive Analysis - Used simple AI to forecast how education investments could reduce unemployment
+Current weights:
+- Education gap: 0.35
+- Unemployment need: 0.30
+- Opportunity: 0.25
+- Job density: 0.10
 
-Interactive Dashboard - Built a visual report in Power BI that shows everything clearly
+## Current data coverage
+The repo currently ships a **sample dataset of 15 districts** (see `data/raw/` and `data/processed/final_data.csv`). If you want "all Nepal districts", you'll need full-coverage source files and to rerun the notebook.
 
+## Notes on the "prediction" section
+The notebook includes a simple linear regression "what-if" scenario (e.g., +15 percentage points STEM enrollment) to illustrate directionally how outcomes *might* change. This is not a causal model; it should be presented as an illustrative scenario only (not a guaranteed impact estimate).
 
+## How to use
+- Open `dashboard/EOF_Nepal_Dashboard.pbix` in Power BI to explore the visuals.
+- Open `notebooks/EOF.ipynb` to see/modify the analysis and re-export `data/processed/final_data.csv`.
 
-Technologies I Used
-Python - For data cleaning, analysis, and predictions
-
-Pandas - To work with all the data tables
-
-Power BI - To create visual charts and maps
-
-Web Scraping - To collect job market information
-
-Excel - For initial data organization
-
-
-
-Key Findings
-The analysis shows that these districts need the most urgent attention:
-
-Dolpa - Remote area with very few educational opportunities
-
-Dadeldhura - High unemployment, especially for women
-
-Banke - Growing job market but not enough trained workers
-
-The good news is that investing in STEM education could reduce youth unemployment by 8-12% in most districts within a few years.
-
-
-
-
-How to Use This Project
-If you want to explore the results:
-
-Open the Power BI file to see interactive charts and maps
-
-Check the Jupyter notebook to see how the analysis was done
-
-Look at the CSV files to see the raw data
-
-
-
-Why This Matters
-This project isn't just about numbers - it's about helping real students in Nepal get better education and better jobs. By showing where help is needed most, we can make sure UNESCO's resources create the biggest positive impact.
-
-
-
-
-About Me
-I'm a software engineering student passionate about using technology to solve real-world problems. This project combines my technical skills with my interest in education and social development.
-
-
-
-
-Contact
-If you have questions about this project or want to discuss education data analysis:
+## Contact
 Email: bhumikaojha01@gmail.com
-I believe data can help us make better decisions about education and create more opportunities for students across Nepal.
